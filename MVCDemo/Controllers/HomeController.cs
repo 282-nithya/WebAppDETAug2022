@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MVCDemo.Fitters;
 using MVCDemo.Models;
 using System.Diagnostics;
 
@@ -21,10 +22,23 @@ namespace MVCDemo.Controllers
             ViewBag.Contact = contact;
             return View();
         }
-
+        [MyLog]
         public string CSRetest()
         {
-            return "c# retest is scheduled today @5pm; Get Prepared";
+            return "csharp test is today @5pm; get prepared";
+        }
+        [ResponseCache(Duration = 10)]
+        [MyLog]
+
+        public string Retest()
+        {
+            return DateTime.Now.ToString();
+        }
+        [MyLog]
+        public string retests()
+        {
+            return "c#=12-sep";
+
         }
         public IActionResult Index()
         {
