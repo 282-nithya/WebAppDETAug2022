@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using APIWeb.Data;
 using APIWeb.Models;
+using Microsoft.AspNetCore.OData.Query;
 
 namespace APIWeb.Controllers
 {
@@ -23,6 +24,7 @@ namespace APIWeb.Controllers
 
         // GET: api/TodoItems
         [HttpGet]
+        [EnableQuery]
         public async Task<ActionResult<IEnumerable<TodoItem>>> GetTodoItem()
         {
           if (_context.TodoItem == null)

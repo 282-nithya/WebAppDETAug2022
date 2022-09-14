@@ -2,6 +2,7 @@
 using APIWeb.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OData.Query;
 
 namespace APIWeb.Controllers
 {
@@ -11,6 +12,7 @@ namespace APIWeb.Controllers
     {
 
         [HttpGet]
+        [EnableQuery]
         public ActionResult<List<Pizza>> GetAll() =>
          PizzaService.GetAll();
 
